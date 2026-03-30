@@ -1,4 +1,3 @@
-/* --- VARIABLES ET CONFIGURATION GLOBALE --- */
 :root {
     --couleur-fond: #0f0f0f;
     --couleur-menu: #151515;
@@ -27,24 +26,24 @@ body {
 
 .barre-laterale {
     width: 100%;
-    height: 80px; /* Hauteur fixe pour la barre du haut */
+    height: 80px; 
     background: var(--couleur-menu);
-    border-bottom: 1px solid #222; /* Bordure déplacée en bas */
+    border-bottom: 1px solid #222; 
     position: fixed;
     top: 0; 
     left: 0;
     display: flex;
-    flex-direction: row; /* Alignement horizontal */
-    justify-content: space-between; /* Logo à gauche, Nav à droite */
+    flex-direction: row; 
+    justify-content: space-between; 
     align-items: center;
-    padding: 0 30px; /* Aligné sur ta marge de 30px */
+    padding: 0 30px; 
     z-index: 1000;
 }
 
 .mon-logo { 
     font-size: 2.5rem; 
     font-weight: bold; 
-    margin-bottom: 0; /* Supprimé pour l'alignement horizontal */
+    margin-bottom: 0; 
     padding-left: 0; 
 }
 
@@ -52,11 +51,9 @@ body {
     display: flex; 
     list-style: none; 
     gap: 15px;
-    /* Aligne les éléments au centre horizontalement */
     justify-content: center; 
-    /* Aligne les éléments au centre verticalement (si topbar) */
     align-items: center; 
-    flex-grow: 1; /* Permet à la liste de prendre l'espace disponible pour se centrer */
+    flex-grow: 1; 
 }
 
 .liste-navigation li {
@@ -72,11 +69,9 @@ body {
     color: var(--texte-gris);
     text-decoration: none;
     font-size: 1rem;
-    /* Force le texte à être centré à l'intérieur du lien */
     text-align: center; 
     transition: 0.3s;
 }
-
 
 .liste-navigation li.active a { 
     color: var(--texte-blanc); 
@@ -85,14 +80,13 @@ body {
 .liste-navigation li a:hover { 
     color: var(--texte-blanc); 
 }
-/* --- CONTENEUR PRINCIPAL --- */
+
 .conteneur-principal {
-    margin-left: 0; /* Plus de vide à gauche */
-    margin-top: 80px; /* Pousse le contenu sous la Topbar (égale à sa hauteur) */
+    margin-left: 0; 
+    margin-top: 80px; 
     width: 100%;
 }
 
-/* --- SECTIONS --- */
 .section-pleine-page {
     min-height: 35vh;
     padding: 80px;
@@ -102,7 +96,6 @@ body {
     position: relative;
 }
 
-/* --- STYLE ACCUEIL --- */
 .conteneur-flexible {
     display: flex;
     justify-content: space-between;
@@ -123,19 +116,15 @@ body {
 
 .paragraphe-detail {
     margin-top: 30px;
-    
     color: var(--texte-gris);
-    /* Augmente la largeur max pour laisser la place à la phrase */
     max-width: 800px; 
     line-height: 1.8;
 }
 
-/* Optionnel : si tu veux forcer cette phrase spécifique à ne jamais s'occuper du bord */
 .paragraphe-detail span.citation {
     white-space: nowrap;
 }
 
-/* --- FENÊTRE DE SIMULATION D'IDE (INDENTATION & RETOUR LIGNE) --- */
 .fenetre-simulation-code {
     width: 450px;
     background: #111;
@@ -158,19 +147,17 @@ body {
     color: #abb2bf;
 }
 
-/* Correction cruciale pour l'indentation et le débordement */
 .corps-du-code pre {
-    tab-size: 2;                /* Taille des tabulations à 2 espaces */
+    tab-size: 2;                
     -moz-tab-size: 2;
-    white-space: pre-wrap;      /* Respecte les espaces et force le retour à la ligne */
-    word-wrap: break-word;      /* Coupe les mots si nécessaire */
+    white-space: pre-wrap;      
+    word-wrap: break-word;      
     overflow-wrap: break-word;
 }
 
 .mot-cle { color: #c678dd; font-weight: bold; }
 .chaine { color: #98c379; }
 
-/* --- STYLE COMPÉTENCES --- */
 .titre-section {
     font-size: 2.2rem;
     letter-spacing: 4px;
@@ -194,17 +181,16 @@ body {
     border: 1px solid #252525;
 }
 .carte-categorie h2 {
-    text-align: center;      /* Centre le texte horizontalement */
-    width: 100%;             /* S'assure que le titre prend toute la largeur pour le centrage */
-    margin-bottom: 30px;     /* Espace entre le titre centré et la première barre */
+    text-align: center;      
+    width: 100%;             
+    margin-bottom: 30px;     
     font-size: 1.5rem;
     color: var(--texte-blanc);
-    text-transform: capitalize; /* Optionnel : pour une jolie majuscule */
+    text-transform: capitalize; 
 }
 
 .outils-large { grid-column: span 2; }
 
-/* --- BARRES DE PROGRESSION --- */
 .barre-competence { margin-bottom: 30px; }
 .infos-barre { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.9rem; color: var(--texte-gris); }
 
@@ -225,7 +211,6 @@ body {
     transition: width 2s cubic-bezier(0.1, 0.5, 0.5, 1);
 }
 
-/* Décoration d'arrière-plan */
 .lumiere-fond {
     position: absolute;
     top: 0; right: 0;
@@ -234,19 +219,16 @@ body {
     z-index: -1;
 }
 
-
-/* --- FORMAT MOBILE (Écrans inférieurs à 1250px) --- */
 @media screen and (max-width: 1250px) {
     body {
-        display: block; /* On empile la sidebar et le contenu verticalement */
+        display: block; 
         overflow-y: auto; 
     }
 
-    /* 1. SIDEBAR AU-DESSUS */
     .barre-laterale {
         width: 100%;
         height: auto;
-        position: relative; /* Elle ne bloque plus le côté gauche */
+        position: relative; 
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
@@ -260,11 +242,9 @@ body {
     display: flex; 
     list-style: none; 
     gap: 15px;
-    /* Aligne les éléments au centre horizontalement */
     justify-content: center; 
-    /* Aligne les éléments au centre verticalement (si topbar) */
     align-items: center; 
-    flex-grow: 1; /* Permet à la liste de prendre l'espace disponible pour se centrer */
+    flex-grow: 1; 
 }
 
 .liste-navigation li {
@@ -280,27 +260,25 @@ body {
     color: var(--texte-gris);
     text-decoration: none;
     font-size: 0.9rem;
-    /* Force le texte à être centré à l'intérieur du lien */
     text-align: center; 
     transition: 0.3s;
 }
-    /* 2. CENTRAGE ET REMONTÉE DU CONTENU */
     .conteneur-principal {
-        margin-left: 0; /* On annule la marge de la sidebar */
+        margin-left: 0; 
         width: 100%;
-        padding: 10px 20px; /* On remonte au maximum vers la sidebar */
-        text-align: center; /* On centre tout par défaut */
+        padding: 10px 20px; 
+        text-align: center; 
     }
 
     .zone-presentation {
-        min-height: auto; /* On laisse le contenu dicter la hauteur pour tout remonter */
+        min-height: auto; 
         padding: 10px 0;
     }
 
     .conteneur-flexible {
-        flex-direction: column; /* Empilement texte puis IDE */
+        flex-direction: column; 
         align-items: center; 
-        gap: 20px; /* Espace réduit entre les deux */
+        gap: 20px; 
     }
 
     .bloc-introduction {
@@ -308,40 +286,37 @@ body {
     }
 
     .paragraphe-detail {
-        padding-left: 0; /* On enlève le décalage pour le centrage */
+        padding-left: 0; 
         margin: 10px auto;
         margin-top: 100px;
         max-width: 90%;
     }
 
-    /* 3. SIMULATION IDE (Contenu à gauche, Boîte centrée) */
     .fenetre-simulation-code {
         width: 100%;
-        max-width: 420px; /* Garde sa taille de base */
-        margin: 0 auto; /* Centre la boîte elle-même */
+        max-width: 420px; 
+        margin: 0 auto; 
         margin-top: 100px;
     }
 
     .corps-du-code {
-        text-align: left; /* FORCE LE TEXTE À GAUCHE À L'INTÉRIEUR */
+        text-align: left; 
         padding: 20px;
     }
 
     .corps-du-code pre {
-        white-space: pre; /* Garde ton indentation VS Code */
+        white-space: pre; 
     }
 
-    /* 4. COMPÉTENCES AU CENTRE */
     .grille-trois-colonnes {
-        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+        grid-template-columns: 1fr; 
         width: 100%;
         max-width: 420px;
-        margin: 30px auto 0; /* Centre la grille */
+        margin: 30px auto 0; 
     }
 
     .titre-section-mini {
         margin-left: 10px;
         margin-top: 100px;
-        
     }
 }
