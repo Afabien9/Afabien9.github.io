@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Portfolio - Mes Projets</title>
+    <link rel="stylesheet" href="projets.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="barre-laterale">
+      <a href="index.html" class="mon-logo" style="text-decoration: none;">AF</a>
+      <ul class="liste-navigation">
+        <li><a href="index.html">Accueil</a></li>
+        <li class="active"><a href="projets.html">Projets</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main class="conteneur-projets">
+      <header class="entete-section">
+        <h1 class="titre-galerie">Mes Réalisations</h1>
+      </header>
+
+      <div class="grille-projets">
+        <article class="carte-projet">
+          <div class="visuel-projet">
+            <div class="overlay-image"><img src="ressource/DART COACH SCREEN.png" alt="Aperçu du projet"></div>
+          </div>
+          <div class="infos-projet">
+            <h3>Dart Calculator</h3>
+            <p class="resume">
+              Un calculateur de score pour les fléchettes. Simple en surface, technique en profondeur.
+            </p>
+
+            <div class="bloc-details">
+              <p>
+                Coach Darter est un assistant de jeu intelligent pour les parties de 501, 
+                conçu pour transformer une logique métier complexe en une expérience utilisateur fluide et immersive. 
+                Développé en JavaScript, ce projet repose sur un système de parsing robuste capable d'interpréter les notations réelles des fléchettes 
+                (T20, Bull, D16) tout en appliquant strictement les règles de sortie du jeu. L'application se distingue par son module de coaching 
+                dynamique qui suggère les combinaisons de finitions optimales en temps réel dès que le score le permet. Au-delà du calcul 
+                des statistiques (moyennes, précision), l'accent a été mis sur la fiabilité de l'état applicatif, notamment avec la gestion d'un 
+                historique permettant l'annulation de coups et une interface garantissant un feedback visuel immédiat. 
+                Ce projet démontre ma capacité à structurer un code modulaire et à privilégier la résolution de problèmes métier.
+                
+              </p>
+              <div class="tags">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+              </div>
+            </div>
+              <a href="https://github.com/Afabien9/Flechettes" target="_blank" class="btn-github">
+                     <i class="fa-brands fa-github"></i> Voir le code (Terminé)
+                </a>
+            </div>
+        </article>
+
+       <article class="carte-projet">
+          <div class="visuel-projet">
+            <div class="overlay-image"><img src="ressource/Screen In Game.png" alt="Aperçu du projet"></div>
+          </div>
+          <div class="infos-projet">
+            <h3>Script Fighter</h3>
+            <p class="resume">
+              48 heures pour bâtir un jeu de combat nerveux : un défi technique relevé en équipe grâce à une stack Full-Stack JavaScript et l
+              a puissance de Phaser 3.
+            </p>
+
+            <div class="bloc-details">
+              <p>
+                Pour relever le défi de cette GameJam de 48h, mon équipe a choisi un environnement intégralement en JavaScript afin de maximiser la vitesse de 
+                développement. Le framework Phaser 3 a été retenu pour sa gestion robuste de la physique 2D, indispensable aux mécaniques de projection des jeux 
+                de combat, tandis que Node.js a assuré une synergie parfaite entre le serveur et le client. Cette stack unifiée a facilité la centralisation des 
+                données, comme les configurations d'attaques et les constantes physiques, garantissant une communication fluide entre les composants du projet.
+
+                Le défi majeur a résidé dans la précision des hitboxes et leur synchronisation avec les animations. Nous avons dû développer un calcul d'offset 
+                dynamique pour corriger les décalages d'attaque liés à l'orientation du joueur et implémenter un système de verrouillage pour éviter que l'adversaire 
+                ne subisse plusieurs fois les dégâts d'un seul coup. Pour contrer le phénomène de tunneling, où un joueur rapide traverse une zone de frappe entre 
+                deux images, nous avons ajusté finement la taille des corps physiques et stabilisé les vitesses de dash. Cette architecture cohérente nous a permis de 
+                livrer un gameplay dynamique et équitable malgré un délai extrêmement court. 
+              </p>
+              <div class="tags">
+                <span>Node.js</span><span>Phaser 3</span><span>JavaScript</span>
+              </div>
+            </div>
+              <a href="https://github.com/Afabien9/GameJam" target="_blank" class="btn-github">
+                     <i class="fa-brands fa-github"></i> Voir le code (Terminé)
+                </a>
+            </div>
+        </article>
+
+          <article class="carte-projet">
+          <div class="visuel-projet">
+            <div class="overlay-image"><img src="ressource/25516.jpg" alt="Aperçu du projet"></div>
+          </div>
+          <div class="infos-projet">
+            <h3>Logiciel de gestion restaurant rapide</h3>
+            <p class="resume">
+              Allier un backend Go ultra-performant à une interface React synchronisée par WebSockets pour une gestion des stocks et des commandes 
+              en temps réel.
+            </p>
+
+            <div class="bloc-details">
+              <p>
+                Le but principal de ce projet est de stabiliser et d'unifier un écosystème numérique fragmenté pour assurer la réussite d'un événement 
+                festif d'envergure. La mission consiste à transformer des modules initialement isolés (Caisse, Cuisine, Admin, Stocks) en une 
+                application unique, fluide et capable de supporter une utilisation réelle sur un réseau local. Cette architecture privilégie la r
+                ésilience opérationnelle, indispensable pour éviter toute erreur de stock qui pourrait paralyser le service lors des pics d'affluence. 
+                Pour soutenir cet objectif, l'utilisation de Go et PostgreSQL permet des transactions sécurisées verrouillant précisément les ressources
+                , garantissant que chaque vente impacte instantanément le stock réel et s'affiche en cuisine sans risque de collision. Le frontend, 
+                développé avec TypeScript et Zustand, assure une interface robuste en éliminant les erreurs de saisie et en maintenant le panier client
+                 synchronisé en permanence. La réactivité est assurée par des WebSockets qui transmettent instantanément les commandes et les alertes 
+                 de rupture au système cuisine (KDS), empêchant ainsi la vente d'articles épuisés. Enfin, pour pallier l'instabilité potentielle du 
+                 Wi-Fi sur site, une logique de reconnexion automatique est intégrée afin de garantir qu'aucun ticket ne soit perdu. Cette stack moderne,
+                  livrée dans une architecture Dockerisée, offre une solution de caisse à la fois flexible et extrêmement stable, même sous une forte 
+                  charge de travail.
+              </p>
+              <div class="tags">
+                <span>React</span><span>Go</span><span>TypeScript</span><span>PostgreSQL</span>
+              </div>
+            </div>
+              <a href="https://github.com/votre-compte/votre-repo" target="_blank" class="btn-github">
+                     <i class="fa-brands fa-github"></i> Voir le code (En cours)
+                </a>
+            </div>
+        </article>
+
+       <article class="carte-projet">
+          <div class="visuel-projet">
+            <div class="overlay-image"><img src="ressource/25516.jpg" alt="Aperçu du projet"></div>
+          </div>
+          <div class="infos-projet">
+            <h3>TimeTrakr</h3>
+            <p class="resume">
+              TimeTrakr est une solution de télémétrie intelligente qui transforme vos sessions de code VS Code en un dashboard analytique et 
+              immersif, alliant suivi de productivité et visualisation 3D.
+            </p>
+
+            <div class="bloc-details">
+              <p>
+                Cette architecture repose sur une synergie entre typage rigoureux, agilité stylistique et sécurité des données, visant à transformer 
+                le suivi d'activité de l'extension VS Code en une expérience visuelle immersive et analytique. Le but du projet est de centraliser et 
+                de quantifier le temps de codage par projet, fichier et langage, tout en offrant des fonctionnalités avancées comme la gestion 
+                d'objectifs, le filtrage par productivité et un dashboard innovant passant de graphes classiques à un système 3D de "planètes".
+
+                En s'appuyant sur React et TypeScript, vous développez une interface utilisateur prévisible où la détection d’erreurs en temps réel 
+                sécurise le code, tandis que Tailwind CSS accélère le design pour garantir une UX intuitive. L’intégration de Chart.js ou Three.js est 
+                ici cruciale pour matérialiser les statistiques de télémétrie en visualisations percutantes, captivant immédiatement l'utilisateur. 
+                Côté infrastructure, l’écosystème Node.js couplé à Express et Zod assure une validation stricte des données entrantes, garantissant 
+                l'intégrité de la base PostgreSQL gérée via Supabase. Cette plateforme managée permet d'absorber la complexité liée à l'authentification
+                 (GitHub, mail) et au stockage, offrant ainsi une scalabilité native pour soutenir l'évolution des fonctionnalités, du mode confidentiel 
+                 au dashboard d'équipe.
+                
+              </p>
+              <div class="tags">
+                <span>React</span><span>TypeScript</span><span>Express.js</span><span>PostgreSQL</span>
+              </div>
+            </div>
+              <a href="https://github.com/votre-compte/votre-repo" target="_blank" class="btn-github">
+                     <i class="fa-brands fa-github"></i> Voir le code (En cours)
+                </a>
+            </div>
+        </article>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,172 @@
+:root {
+    --couleur-fond: #0f0f0f;
+    --couleur-menu: #151515;
+    --bg-carte: #1a1a1a;
+    --accent-rouge: #e63946;
+    --texte-blanc: #ffffff;
+    --texte-gris: #a0a0a0;
+    --hauteur-topbar: 80px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--couleur-fond);
+    color: var(--texte-blanc);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* --- TOPBAR --- */
+.barre-laterale {
+    width: 100%;
+    height: 80px; 
+    background: var(--couleur-menu);
+    border-bottom: 1px solid #222; 
+    position: fixed;
+    top: 0; 
+    left: 0;
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0 30px; 
+    z-index: 1000;
+}
+
+.mon-logo { 
+    font-size: 2.5rem; 
+    font-weight: bold; 
+    color: var(--texte-blanc); 
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.liste-navigation { 
+    display: flex; 
+    list-style: none; 
+    gap: 15px;
+    justify-content: center; 
+    align-items: center; 
+    flex-grow: 1; 
+}
+
+.liste-navigation li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.liste-navigation li a {
+    display: block;
+    padding: 10px 15px;
+    color: var(--texte-gris);
+    text-decoration: none;
+    font-size: 1rem;
+    text-align: center; 
+    transition: 0.3s;
+}
+
+.liste-navigation li.active a { 
+    color: var(--texte-blanc); 
+}
+
+.liste-navigation li a:hover { 
+    color: var(--texte-blanc); 
+}
+
+/* --- CONTENEUR PRINCIPAL --- */
+.conteneur-contact {
+    margin-top: var(--hauteur-topbar);
+    padding: 60px 30px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.entete-contact { text-align: center; margin-bottom: 60px; }
+.titre-galerie { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 10px; }
+.sous-titre-contact { color: var(--texte-gris); font-size: 1.1rem; }
+
+/* --- CARTES RÉSEAUX --- */
+.grille-reseaux {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 80px;
+}
+
+.carte-reseau {
+    background: var(--bg-carte);
+    border: 1px solid #252525;
+    padding: 40px 20px;
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+.carte-reseau i { font-size: 2.5rem; color: var(--accent-rouge); margin-bottom: 20px; }
+.carte-reseau h3 { margin-bottom: 10px; font-size: 1.2rem; }
+.carte-reseau p { color: var(--texte-gris); font-size: 0.9rem; }
+
+.carte-reseau:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-rouge);
+    box-shadow: 0 10px 30px rgba(230, 57, 70, 0.2);
+}
+
+/* --- SECTION CV (ADAPTÉE POUR L'IMAGE) --- */
+.section-cv { margin-top: 40px; text-align: center; }
+.titre-section { font-size: 2rem; margin-bottom: 40px; color: var(--accent-rouge); }
+
+.conteneur-cv {
+    background: var(--bg-carte);
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column; /* Empilement vertical pour l'image et le bouton */
+    align-items: center;
+    gap: 40px;
+    border: 1px solid #252525;
+}
+
+.visualiseur-cv-image {
+    width: 100%;
+    max-width: 800px; /* Largeur max confortable pour la lecture */
+    border-radius: 10px;
+    overflow: hidden;
+    /* Ombre portée pour détacher l'image du fond */
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6); 
+    border: 1px solid #333;
+}
+
+.visualiseur-cv-image img {
+    width: 100%;
+    height: auto; /* Maintient le ratio d'aspect */
+    display: block;
+}
+
+.actions-cv { text-align: center; }
+.actions-cv p { margin-bottom: 30px; font-size: 1.1rem; color: var(--texte-gris); }
+
+.btn-cv {
+    display: inline-block;
+    background: var(--accent-rouge);
+    color: white;
+    text-decoration: none;
+    padding: 15px 35px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+    font-size: 1rem;
+}
+
+.btn-cv:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(230, 57, 70, 0.4); }
+
+/* --- RESPONSIVE --- */
+@media screen and (max-width: 900px) {
+    .grille-reseaux { grid-template-columns: 1fr; }
+    .conteneur-cv { padding: 20px; }
+}

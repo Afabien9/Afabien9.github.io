@@ -1,0 +1,191 @@
+:root {
+    --couleur-fond: #0f0f0f;
+    --couleur-menu: #151515;
+    --bg-carte: #1a1a1a;
+    --accent-rouge: #e63946;
+    --texte-blanc: #ffffff;
+    --texte-gris: #a0a0a0;
+    --gris-barre: #333;
+    --bleu-projet: #0000CD;
+    --largeur-sidebar: 200px; 
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--couleur-fond);
+    color: var(--texte-blanc);
+    font-family: 'Poppins', sans-serif;
+    display: block;
+    min-height: 100vh;
+}
+
+/* --- TOPBAR --- */
+.barre-laterale {
+    width: 100%;
+    height: 80px; 
+    background: var(--couleur-menu);
+    border-bottom: 1px solid #222; 
+    position: fixed;
+    top: 0; 
+    left: 0;
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0 30px; 
+    z-index: 1000;
+}
+
+.mon-logo { 
+    font-size: 2.5rem; 
+    font-weight: bold; 
+    color: var(--texte-blanc); 
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.liste-navigation { 
+    display: flex; 
+    list-style: none; 
+    gap: 15px;
+    justify-content: center; 
+    align-items: center; 
+    flex-grow: 1; 
+}
+
+.liste-navigation li a {
+    display: block;
+    padding: 10px 15px;
+    color: var(--texte-gris);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.liste-navigation li.active a,
+.liste-navigation li a:hover { 
+    color: var(--texte-blanc); 
+}
+
+/* --- CONTENEUR PRINCIPAL --- */
+.conteneur-projets { 
+    margin-top: 80px;
+    width: 100%; 
+    padding: 60px 80px; 
+}
+
+.titre-galerie { 
+    font-family: 'Playfair Display', serif; 
+    font-size: 3rem; 
+    margin: 10px 0 50px; 
+}
+
+/* --- GRILLE & CARTES (2 PAR LIGNE ET ALIGNÉES) --- */
+.grille-projets { 
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px; 
+    align-items: stretch; /* Aligne la hauteur de toutes les cartes d'une même ligne */
+}
+
+.carte-projet {
+    background: var(--bg-carte);
+    border: 1px solid #252525;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+}
+
+/* --- CORRECTION POUR L'ALIGNEMENT DES IMAGES DIFFÉRENTES --- */
+.visuel-projet { 
+    height: 300px;
+    background: #111; /* Fond sombre pour boucher les trous */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.visuel-projet img {
+    /* La clé de la solution : */
+    max-width: 100%;  /* L'image ne dépasse jamais la largeur du cadre */
+    max-height: 100%; /* L'image ne dépasse jamais la hauteur du cadre */
+    object-fit: contain; /* L'image s'adapte sans être coupée ni déformée */
+    object-position: center; /* L'image portrait sera centrée dans son cadre */
+    display: block;
+}
+
+.infos-projet { 
+    padding: 30px; 
+    display: flex; 
+    flex-direction: column; 
+    flex-grow: 1; /* Pousse le bouton vers le bas */
+}
+
+/* --- DÉTAILS TOUJOURS VISIBLES --- */
+.bloc-details {
+    display: block;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    flex-grow: 1; 
+}
+
+.tags { display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
+.tags span { font-size: 0.7rem; background: #222; padding: 4px 10px; border-radius: 5px; color: var(--texte-blanc); }
+
+/* --- BOUTON VOIR LE CODE (GITHUB) --- */
+.btn-github {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%; 
+    margin-top: 25px; 
+    background: transparent;
+    border: 1px solid var(--texte-blanc); 
+    color: var(--texte-blanc);
+    padding: 12px; 
+    border-radius: 8px; 
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-github:hover { 
+    background: var(--texte-blanc); 
+    color: #000; 
+}
+
+.btn-toggle {
+    display: none !important; 
+}
+
+/* --- MODE MOBILE --- */
+@media screen and (max-width: 1000px) {
+    .conteneur-projets { padding: 40px 20px; }
+    
+    .grille-projets { 
+        grid-template-columns: 1fr; 
+        max-width: 600px; 
+        margin: 0 auto; 
+    }
+
+    .visuel-projet { 
+        height: 250px; 
+    }
+
+    .barre-laterale {
+        height: auto; position: relative; padding: 15px 20px;
+    }
+    
+    .liste-navigation li a { font-size: 0.9rem; padding: 5px 8px; }
+}
