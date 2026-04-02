@@ -131,6 +131,15 @@ body {
     padding-top: 20px;
     border-top: 1px solid #333;
     flex-grow: 1; 
+    max-width: 100%;
+}
+
+.bloc-details > ul > li {
+    padding-top: 20px;
+}
+
+.bloc-details > ul > li > span {
+    font-weight: bold;
 }
 
 .tags { display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
